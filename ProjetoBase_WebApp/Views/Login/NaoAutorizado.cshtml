@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - ERROR 405</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Images/icon/Tse.ico">
+    @Styles.Render("~/Content/css")
+    <script src="~/Scripts/pace.min.js"></script>
+</head>
+<body>
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <div id="page-container" class="fade">
+        <!-- begin error -->
+        <div class="error">
+            <div class="error-code m-b-10">405</div>
+            <div class="error-content">
+                <div class="error-message">Este método não é permitido...</div>
+                <div class="error-desc m-b-30">
+                    Não foi possível executar a ação desejada. <br />
+                    Contate o Administrador do Sistema ou seu Superior.
+                </div>
+                <div>
+                    <a href="@Url.Action("Index","Home")" class="btn btn-success p-l-20 p-r-20">Voltar para página inicial</a>
+                </div>
+            </div>
+        </div>
+        <!-- end error -->
+    </div>
+
+    @Scripts.Render("~/Scripts/js")
+    <script>
+$(document).ready(function () {
+            App.init();
+        });</script>
+</body>
+</html>
+

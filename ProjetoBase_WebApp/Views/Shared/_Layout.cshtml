@@ -1,0 +1,131 @@
+﻿@using ProjetoBase_Dominio.Autenticacao
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>MAGICRAMP</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/Imagens/cropped-FR-Magi-32x32.png">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    @Styles.Render("~/Content/css")
+    @RenderSection("Stylesheets", false)
+    <!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="page-container fade page-sidebar-minified page-header-fixed">
+        <!-- begin #header -->
+        <div id="header" class="header navbar-default">
+            <!-- begin navbar-header -->
+            <div class="navbar-header">
+                <a href="@Url.Action("Index","Home")" class="navbar-brand">
+                    <div class="brand">
+                        <img src="~/Content/Imagens/logos/logo-Magicramp-FR.png" height="30" />
+                    </div>
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- begin header-nav -->
+            <ul class="navbar-nav navbar-right">
+                <li class="dropdown navbar-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="d-none d-md-inline">@*@ContextoPrincipal.Principal.Nome*@</span> <b class="caret"></b>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        @*<a href="@Url.Action("logOff","Autenticacao")" class="dropdown-item">Sair</a>*@
+                    </div>
+                </li>
+            </ul>
+            <!-- end header-nav -->
+        </div>
+        <!-- end #header -->
+        <!-- begin #sidebar -->
+        <div id="sidebar" class="sidebar">
+            <!-- begin sidebar scrollbar -->
+            <div data-scrollbar="true" data-height="100%">
+                <!-- begin sidebar user -->
+                <ul class="nav">
+                    <li class="nav-profile">
+                        <a href="javascript:;" data-toggle="nav-profile">
+                            <div class="info">
+                                @*@ContextoPrincipal.Principal.Nome*@
+                                <small>MAGICRAMP</small>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end sidebar user -->
+                <!-- begin sidebar nav -->
+                <ul class="nav">
+                    <li class="nav-header">Menu</li>
+                    @*<li @if (ViewContext.RouteData.Values["Controller"].ToString() == "Home") { @: class="active"
+                        }>
+                        <a href="@Url.Action("Index", "Home")">
+                            <i class="fas fa-home"></i>
+                            <span>Principal</span>
+                        </a>
+                    </li>*@
+                    @*@foreach (var modulo in ContextoPrincipal.Principal.ObtenhaModulosHabilitados())
+                    {
+                        var recursos = modulo.Recursos
+                            .Where(recurso => 
+                                ContextoPrincipal.Principal.RecursoEHabilitado(recurso));
+
+                        if (recursos.Any())
+                        {
+                            <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == modulo.Recursos.Select(e => e.Controller).FirstOrDefault() ? "has-sub active" : "has-sub")">
+                                <a href="javascript:;">
+                                    <b class="caret"></b>
+                                    <i class="@modulo."></i>
+                                    <span>@modulo.Descricao</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    @foreach (var recurso in recursos)
+                                    {
+                                        <li @if (ViewContext.RouteData.Values["Action"].ToString() == recurso.Action && ViewContext.RouteData.Values["Controller"].ToString() == modulo.Controller) { @: class="active"
+                                            }>
+                                            <a href="@Url.Action(recurso.Action, modulo.Recursos.Select(e => e.Controller).FirstOrDefault() )">
+                                                @recurso.Descricao
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+
+                            </li>
+                        }
+                    }*@
+                    <!-- begin sidebar minify button -->
+                    <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+                    <!-- end sidebar minify button -->
+                </ul>
+                <!-- end sidebar nav -->
+            </div>
+            <!-- end sidebar scrollbar -->
+        </div>
+        <div class="sidebar-bg"></div>
+        <!-- end #sidebar -->
+        <!-- begin #content -->
+        <div id="content" class="content">
+            @RenderBody()
+        </div>
+        <!-- end #content -->
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-dark btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
+    </div>
+    <!-- end page container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    @Scripts.Render("~/Scripts/js")
+    @RenderSection("Scripts", false)
+    <!-- ================== END BASE JS ================== -->
+    <!-- ================== INFRAESTRUTURA ================== -->
+    <!-- <script src="~/Scripts/Infraestrutura/AjudanteTabela.js"></script> -->
+    <!-- ================== INFRAESTRUTURA ================== -->
+</body>
+</html>

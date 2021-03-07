@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Gerenciador De Clientes</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/Imagens/logo-Magicramp-FR.png">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    @Styles.Render("~/Content/css")
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    @RenderSection("Stylesheets", required: false)
+    <!-- ================== END BASE JS ================== -->
+</head>
+<body class="pace-top">
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+
+        <div class="login login-v1">
+            <div class="login-container">
+
+                <div class="login-header">
+                    <div class="brand">
+                        <img src="~/Content/Imagens/logos/logo-Magicramp-FR.png" style="max-width: 90%" />
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                </div>
+                <div class="login-body">
+                    <div class="login-content">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    @Scripts.Render("~/Scripts/js")
+    <!-- ================== END BASE JS ================== -->
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

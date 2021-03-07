@@ -49,6 +49,7 @@
     <Compile Include="Autenticacao\Recursos\EnumeradorDeRecurso.cs" />
     <Compile Include="Basicos\EnumeradorBase.cs" />
     <Compile Include="Entidades\Execoes\ExcecaoBasicaMagicramp.cs" />
+    <Compile Include="Entidades\Logs\Log.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Interfaces\IUnidadeDeTrabalho.cs" />

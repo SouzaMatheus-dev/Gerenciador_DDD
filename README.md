@@ -1,1 +1,1 @@
-# ModeloBase-DDD
+# Gerenciador de clientes para Magicramp

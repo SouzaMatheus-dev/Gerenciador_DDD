@@ -1,1 +1,1 @@
-# Gerenciador de clientes para Magicramp
+# Gerenciador de clientes
